@@ -1,0 +1,75 @@
+# Ignore actual .env files - NEVER commit these!
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Bitwarden session files (just in case)
+bw_session*
+BW_SESSION*
+
+# Node modules (if using npm for bw)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PowerShell module files
+*.psm1
+*.psd1
+*.ps1xml
+
+# Test output
+test-results/
+coverage/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Package files
+*.tgz
+*.tar.gz
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# Environment specific
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Backup files
+*.bak
+*.backup
+
+# Script output
+backup_*.json
+export_*.csv
