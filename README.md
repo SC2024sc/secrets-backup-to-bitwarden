@@ -237,3 +237,5 @@ Feel free to submit issues and enhancement requests!
 ## License
 
 MIT License - feel free to use and modify for your needs.
+
+**⭐ If this project helps you, please give it a star!**
